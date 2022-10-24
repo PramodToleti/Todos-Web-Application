@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html manifest="todo.manifest" lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/5f59ca6ad3.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/fd85e83510.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Todos App</title>
+    <link rel="icon" href="https://res.cloudinary.com/dlpgowt5s/image/upload/v1666593588/Screenshot_2022-10-24_120816_ufdqaa.png" type="image/x-icon">
+</head>
+
+<body>
+    <div id="sectionUser">
+        <div class="user d-flex flex-column justify-content-center">
+            <div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="d-flex flex-row justify-content-center mb-2">
+                                <script src="https://cdn.lordicon.com/pzdvqjsp.js"></script>
+                                <lord-icon src="https://cdn.lordicon.com/qvbrkejx.json" trigger="loop" delay="1000" style="width:62px;height:62px;margin-top:30px">
+                                </lord-icon>
+                            </div>
+                            <h1 class="quote mb-5 text-center">
+                                Create and manage your personal tasks</h1>
+                            <div class="user-name-container m-md-5 shadow-lg p-2 pt-5 pb-5 text-center">
+                                <input type="text" id="userInput" placeholder="Enter your name" class="mb-4 p-md-3 mt-3 user-input w-75 p-2" />
+                                <br>
+                                <button class="create-button mt-3 mb-3" id="createTodoBtn">
+                                    Let's Go!
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mt-5 mt-md-1 ml-3 d-flex flex-row">
+            <script src="https://cdn.lordicon.com/pzdvqjsp.js"></script>
+            <lord-icon src="https://cdn.lordicon.com/hbvyhtse.json" trigger="loop" colors="primary:#121331" state="hover" delay="2000" style="width:50px;height:50px;margin-top:10px">
+            </lord-icon>
+            <h1 class="mt-4 ml-2" style="font-size:18px">Created by Pramod</h1>
+        </div>
+        <hr />
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-5 pl-3 pb-3 text-md-center">
+                    <script src="https://cdn.lordicon.com/pzdvqjsp.js"></script>
+                    <lord-icon src="https://cdn.lordicon.com/ehfubvwr.json" trigger="loop" delay="2000" style="width:25px;height:25px;margin-right:7px">
+                    </lord-icon>
+                    <a style="text-decoration:none;color:black" href="https://mail.google.com/mail/u/0/#inbox?compose=new" target="_blank">pramodraina047@gmail.com</a>
+                </div>
+                <div class="col-12 col-md-5 pl-3 pb-3 text-md-center">
+                    <script src="https://cdn.lordicon.com/pzdvqjsp.js"></script>
+                    <lord-icon src="https://cdn.lordicon.com/pkmkagva.json" trigger="loop" delay="2000" style="width:25px;height:25px;margin-right:7px">
+                    </lord-icon>
+                    <a style="text-decoration:none;color:black" href="https://www.linkedin.com/in/pramodtoleti" target="_blank">LinkedIn - Pramod Toleti</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="sectionTodo">
+        <div class="todos-bg-container pt-3 pb-4" id="todosContainer">
+            <div class="container">
+                <div class="row">
+                    <h1 class="user-name mt-3">Hello <span class="name" id="name"></span>
+                        <script src="https://cdn.lordicon.com/pzdvqjsp.js"></script>
+                        <lord-icon src="https://cdn.lordicon.com/hbvyhtse.json" trigger="hover" colors="primary:#ffffff" state="hover" style="width:42px;height:42px;padding-bottom:5px;">
+                        </lord-icon>
+                    </h1>
+                    <div class="col-12 mb-3">
+                        <h1 class="todos-heading mb-5" id="todoHeading">Todos
+                            <script src="https://cdn.lordicon.com/pzdvqjsp.js"></script>
+                            <lord-icon src="https://cdn.lordicon.com/zncllhmn.json" trigger="hover" colors="primary:#ffffff" style="width:48px;height:48px;padding-bottom:6px;padding-right:8px">
+                            </lord-icon>
+                        </h1>
+                        <h1 class="create-task-heading mb-3" id="taskheading">
+                            Create <span class="create-task-heading-subpart">Task</span>
+                            <script src="https://cdn.lordicon.com/pzdvqjsp.js"></script>
+                            <lord-icon src="https://cdn.lordicon.com/mrdiiocb.json" trigger="loop" delay="2000" colors="primary:#ffffff" style="width:45px;height:45px;margin-left:3px">
+                            </lord-icon>
+                        </h1>
+                        <input type="text" id="todoUserInput" class="todo-user-input shadow-lg mb-2" placeholder="What needs to be done?" />
+                        <br />
+                        <button class="button" id="addTodoButton">Add</button>
+                    </div>
+                    <div class="col-12">
+                        <div class="task-container p-md-4 mr-md-5 ml-md-5 p-3 mb-2 shadow" id="taskContainer">
+                            <h1 class="todo-items-heading text-center mb-3 p-1" id="myTaskHeading">
+                                My <span class="todo-items-heading-subpart">Tasks</span>
+                                <script src="https://cdn.lordicon.com/pzdvqjsp.js"></script>
+                                <lord-icon src="https://cdn.lordicon.com/ausvvtws.json" trigger="loop" delay="1000" colors="primary:#ffffff" style="width:45px;height:45px">
+                                </lord-icon>
+                            </h1>
+                            <div class="task-subcontainer text-center" id="subtaskContainer">
+                                <img src="https://res.cloudinary.com/dlpgowt5s/image/upload/v1664698732/icons8-empty-64_lebvxg.png" class="task-image-1 mb-2 d-md-none">
+                                <p class="empty-task-1 d-md-none">Oops! It' empty :(</p>
+                                <div class="text-center">
+                                    <div class="d-flex flex-row justify-content-center">
+                                        <img src="https://res.cloudinary.com/dlpgowt5s/image/upload/v1664698732/icons8-empty-64_lebvxg.png" class="task-image-2 mb-2 d-none d-md-block">
+                                    </div>
+                                    <p class="empty-task-2 mb-3 d-none d-md-block">Oops! It' empty :(</p>
+                                </div>
+                            </div>
+                            <ul class="todo-items-container mb-3" id="todoItemsContainer"></ul>
+                            <button class="button" id="saveTodoButton">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+    <script type="text/javascript" src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/js/ccbp-ui-kit.js"></script>
+</body>
+
+</html>
